@@ -113,3 +113,7 @@ footer a { color: var(--secondary); text-decoration: underline; }
 
 .row.center { align-items: center; }
 .row.center h3 { margin: 0; font-weight: 500; font-size: 17px; }
+.beta { margin-top: 14px; }
+.beta .badge { margin-top: 0; }
+.beta .badge:hover { text-decoration: none; filter: brightness(1.08); }
+.beta p.meta { margin: 10px 0 0; font-size: 14px; }
