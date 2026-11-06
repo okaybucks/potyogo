@@ -1,0 +1,112 @@
+/* One stylesheet for every page. System fonts and colors only, no external requests. */
+:root {
+  color-scheme: light dark;
+  --bg: #f2f2f7;
+  --card: #ffffff;
+  --text: #1c1c1e;
+  --secondary: #6c6c70;
+  --separator: rgba(60, 60, 67, 0.18);
+  --accent: #007aff;
+  --green: #34c759;
+  --orange: #ff9500;
+  --purple: #af52de;
+  --pink: #ff2d55;
+  --indigo: #5856d6;
+  --teal: #30b0c7;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #000000;
+    --card: #1c1c1e;
+    --text: #f5f5f7;
+    --secondary: #98989f;
+    --separator: rgba(84, 84, 88, 0.6);
+    --accent: #0a84ff;
+    --green: #30d158;
+    --orange: #ff9f0a;
+    --purple: #bf5af2;
+    --pink: #ff375f;
+    --indigo: #5e5ce6;
+    --teal: #40c8e0;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.5 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 16px; }
+
+nav.top {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 14px 0;
+}
+nav.top .brand { display: flex; align-items: center; gap: 10px; color: var(--text); font-weight: 600; }
+nav.top .brand img { width: 32px; height: 32px; border-radius: 8px; }
+nav.top .links { display: flex; gap: 18px; font-size: 15px; }
+nav.top .links a { color: var(--secondary); }
+nav.top .links a[aria-current="page"] { color: var(--text); font-weight: 600; }
+
+header.hero { text-align: center; padding: 40px 0 28px; }
+header.hero img {
+  width: 128px; height: 128px; border-radius: 29px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+}
+header.hero h1 { font-size: 44px; line-height: 1.1; margin: 22px 0 10px; letter-spacing: -0.02em; }
+header.hero p.lead { font-size: 20px; color: var(--secondary); margin: 0 auto; max-width: 30em; }
+.badge {
+  display: inline-block; margin-top: 22px; padding: 10px 20px; border-radius: 999px;
+  background: var(--accent); color: #fff; font-weight: 600;
+}
+.badge.muted { background: var(--card); color: var(--secondary); border: 1px solid var(--separator); }
+
+h1 { font-size: 34px; line-height: 1.15; margin: 20px 0 8px; letter-spacing: -0.02em; }
+h2 { font-size: 26px; margin: 44px 0 14px; letter-spacing: -0.01em; }
+h3 { font-size: 18px; margin: 0 0 4px; }
+
+.card {
+  background: var(--card); border-radius: 14px; padding: 4px 18px;
+}
+.card + .card { margin-top: 14px; }
+.row { display: flex; gap: 14px; padding: 14px 0; align-items: flex-start; }
+.row + .row { border-top: 1px solid var(--separator); }
+.row p { margin: 0; color: var(--secondary); font-size: 16px; }
+.icon {
+  flex: none; width: 36px; height: 36px; border-radius: 9px;
+  display: grid; place-items: center; color: #fff; font-size: 19px; line-height: 1;
+}
+.icon svg { width: 20px; height: 20px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+ol.steps { margin: 0; padding: 6px 0 6px 22px; }
+ol.steps li { padding: 8px 0 8px 4px; }
+ol.steps li + li { border-top: 1px solid var(--separator); }
+
+.prose { background: var(--card); border-radius: 14px; padding: 6px 22px 18px; }
+.prose h2 { font-size: 20px; margin: 24px 0 6px; }
+.prose p, .prose li { color: var(--text); }
+.prose ul { padding-left: 22px; }
+.meta { color: var(--secondary); font-size: 15px; }
+
+details { padding: 14px 0; }
+details + details { border-top: 1px solid var(--separator); }
+summary { cursor: pointer; font-weight: 600; }
+details p { margin: 8px 0 0; color: var(--secondary); }
+
+footer {
+  margin: 48px 0 32px; text-align: center; color: var(--secondary); font-size: 14px;
+}
+footer a { color: var(--secondary); text-decoration: underline; }
+
+@media (max-width: 480px) {
+  header.hero h1 { font-size: 36px; }
+  header.hero p.lead { font-size: 18px; }
+  nav.top .links { gap: 14px; font-size: 14px; }
+  nav.top .brand span { display: none; }
+}
