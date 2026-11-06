@@ -110,3 +110,6 @@ footer a { color: var(--secondary); text-decoration: underline; }
   nav.top .links { gap: 14px; font-size: 14px; }
   nav.top .brand span { display: none; }
 }
+
+.row.center { align-items: center; }
+.row.center h3 { margin: 0; font-weight: 500; font-size: 17px; }
