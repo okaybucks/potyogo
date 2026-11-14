@@ -5,14 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pötyögő – magyar billentyűzet iPhone-ra</title>
   <meta name="description" content="Magyar billentyűzet iPhone-ra, ami tőled tanul. Swipe, emoji, ékezetek a helyükön, és minden a telefonodon marad.">
-  <link rel="icon" id="favicon" href="favicon.png">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="icon" id="favicon" href="favicon.png?v=3">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png?v=3">
   <script>
     // One icon link, set from the color scheme: browsers ignore media on icon links.
+    // Bump v when an icon changes: browsers keep favicons cached by URL.
     (function () {
       var link = document.getElementById("favicon");
       var dark = window.matchMedia("(prefers-color-scheme: dark)");
-      function update() { link.href = dark.matches ? "favicon-dark.png" : "favicon.png"; }
+      function update() { link.href = dark.matches ? "favicon-dark.png?v=3" : "favicon.png?v=3"; }
       update();
       dark.addEventListener("change", update);
     })();
