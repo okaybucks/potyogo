@@ -5,8 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Támogatás – Pötyögő</title>
   <meta name="description" content="Segítség a Pötyögő billentyűzethez: bekapcsolás, teljes hozzáférés, tanult szavak, kapcsolat.">
-  <link rel="icon" href="favicon.png" media="(prefers-color-scheme: light)">
-  <link rel="icon" href="favicon-dark.png" media="(prefers-color-scheme: dark)">
+  <link rel="icon" id="favicon" href="favicon.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <script>
+    // One icon link, set from the color scheme: browsers ignore media on icon links.
+    (function () {
+      var link = document.getElementById("favicon");
+      var dark = window.matchMedia("(prefers-color-scheme: dark)");
+      function update() { link.href = dark.matches ? "favicon-dark.png" : "favicon.png"; }
+      update();
+      dark.addEventListener("change", update);
+    })();
+  </script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
