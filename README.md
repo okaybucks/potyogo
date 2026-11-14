@@ -8,7 +8,7 @@ Static pages for the App Store listing, published with GitHub Pages from a separ
 | `privacy.html` | Privacy Policy URL |
 | `support.html` | Support URL |
 
-No build step, no external requests. Support address: hello@martonv.com. Keep `privacy.html` in step with the app's own privacy screen (`PrivacyView`).
+No build step, no external requests. Support address: potyogo@martonv.com. Keep `privacy.html` in step with the app's own privacy screen (`PrivacyView`).
 
 Preview locally:
 
